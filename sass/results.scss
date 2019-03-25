@@ -1,0 +1,287 @@
+.results {
+  @media screen and (max-width: 1190px) and (min-width: 576px) {
+    .card-columns {
+      column-count: 2;
+    }
+  }
+
+  .search-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(99,0,75,0.95);
+    z-index: 9999;
+    @include desktop {
+      display: none;
+    }
+    .card {
+      width: 64%;
+      height: auto;
+    }
+    form {
+      display: block;
+      .form-control, .form-group {
+        width: 100%;
+      }
+      .form-group {
+        margin-top: 16px;
+      }
+      .btn-home {
+        width: 100%;
+        margin-top: 16px;
+      }
+    }
+    .closeBtn {
+      @include desktop {
+        display: none;
+      }
+      @include mobile {
+        position: absolute;
+        top: 20%;
+        font-size: 32px;
+        color: #ffcc00;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .search-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: $mainColor;
+    @include desktop {
+      display: none;
+    }
+  }
+
+  .resultsHeader {
+    margin: 64px 0;
+    font-family: 'Raleway';
+    color: #1e1e1e;
+    .resultTitle {
+      font-weight: 700;
+    }
+    .resultSubtitle {
+      font-weight: 300;
+    }
+  }
+
+  .resultsCard {
+    .card {
+      border: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      font-family: "Raleway";
+      h5 {
+        margin-bottom: 0;
+      }
+      .badge {
+        background-color: $mainColor;
+        color: #fff;
+        font-family: "Lato";
+        position: relative;
+        left: 50%;
+        @include mobile-xs {
+          left: 30%;
+        }
+        @media screen and (max-width: 767px) and (min-width: 576px) {
+          left: 30%;
+        }
+      }
+      .card-title {
+        text-transform: uppercase;
+        color: #1e1e1e;
+        font-weight: 700;
+      }
+      .card-price {
+        color: $mainColor;
+        text-align: right;
+        font-family: "Lato";
+        font-weight: 700;
+        @include mobile-xs {
+          font-size: 1.2rem;
+        }
+        @media screen and (max-width: 1190px) and (min-width: 576px) {
+          font-size: 1.15rem;
+        }
+      }
+      .card-oldPrice {
+        text-align: right;
+        font-family: "Lato";
+        text-decoration: line-through;
+        color: #ccc;
+      }
+      .card-rate-1, .card-rate-2, .card-rate-3, .card-rate-4, .card-rate-5 {
+        a {
+          color: $secondColor;
+          cursor: default;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      .card-book {
+        margin-top: 16px;
+        .card-endereco {
+          font-size: 12px;
+          margin-bottom: 0;
+          color: #aaa;
+          b {
+            color: #1e1e1e;
+          }
+        }
+        .button-book {
+          display: flex;
+          justify-content: flex-end;
+          .btn-home {
+            width: auto;
+            padding: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            height: auto;
+            margin-top: 0;
+            &:hover {
+              background-color: $mainDark;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile {
+      display: none;
+    }
+		label {
+			text-transform: uppercase;
+		}
+
+    .form-group {
+      margin-right: 8px;
+      margin-bottom: 0;
+    }
+
+		.form-control {
+			border-radius: 0;
+			padding: 8px 16px;
+			height: 40px;
+			font-weight: 300;
+			color: #1e1e1e;
+      border-color: #eee;
+			&::placeholder {
+				color: #ddd;
+			}
+		}
+
+		.btn-home {
+      width: 40px;
+      padding: 0;
+      margin: 0;
+			&:hover {
+				background-color: $mainDark;
+			}
+		}
+	}
+
+  .navbar {
+		background: #fff !important;
+		padding: 20px;
+		z-index: 9999;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+		.navbar-nav {
+			.nav-item {
+				margin: 0 8px;
+				.nav-link {
+					color: $mainColor;
+					text-transform: uppercase;
+					-webkit-transition: all .1s ease-in;
+					-moz-transition: all .1s ease-in;
+					-o-transition: all .1s ease-in;
+					transition: all .1s ease-in;
+					&:hover {
+						transform: translateY(-2px);
+						border-bottom: 1px solid $mainColor;
+            @include mobile {
+              border-color: #fff;
+            }
+					}
+          @include mobile {
+            color: #fff;
+          }
+				}
+			}
+		}
+
+		.collapse {
+			justify-content: flex-end;
+			.closeBtn {
+				@include desktop {
+					display: none;
+				}
+				@include mobile {
+					position: absolute;
+					top: 20%;
+					font-size: 32px;
+					color: #ffcc00;
+					cursor: pointer;
+				}
+			}
+			@include mobile {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100vw;
+				height: 100vh;
+				padding: 16px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				background-color: rgba(99,0,75,0.95);
+			}
+		}
+
+		.collapsing {
+			@include mobile {
+				-webkit-transition: none;
+		    transition: none;
+		    display: none;
+			}
+		}
+
+		.brand-logo {
+			height: 50px;
+			width: auto;
+		}
+
+		.navbar-toggler {
+			@include mobile {
+				border-radius: 50%;
+				width: 50px;
+				height: 50px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-color: #1e1e1e;
+				i {
+					color: #1e1e1e;
+				}
+			}
+		}
+	}
+}

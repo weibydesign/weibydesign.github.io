@@ -1,0 +1,108 @@
+.pagamentos {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.4);
+  font-family: "Raleway";
+  padding: 16px;
+
+  .pagamentos-modal {
+    background-color: #fff;
+    width: 90%;
+    height: 90%;
+    padding: 32px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+    .pagamento-header {
+      font-family: "Raleway";
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      h1 {
+        font-weight: 700px;
+        color: $mainColor;
+        width: 100%;
+      }
+
+      .close-payment {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 32px;
+        cursor: pointer;
+        transition: all .1s ease-in;
+        &:hover {
+          color: $mainDark;
+        }
+      }
+    }
+
+    .pagamento-one {
+      height: 80%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding: 0 8px;
+      .dados-pessoais {
+        font-family: "Raleway";
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+
+      .dados {
+        input {
+          border-radius: 0;
+          padding: 8px;
+        }
+
+        .btn-home {
+          width: 100%;
+          &:hover {
+            background-color: $mainDark;
+            color: #fff;
+          }
+        }
+
+        .values {
+          margin-bottom: 0;
+          padding: 0;
+          list-style: none;
+
+          .value-item {
+            margin: 8px 0;
+            border-bottom: .5px solid $mainColor;
+          }
+        }
+        table {
+          th {
+            width: 200px;
+            @include mobile {
+              width: 128px;
+            }
+          }
+        }
+
+        .final-value {
+          @include mobile {
+            font-size: 16px
+          }
+        }
+
+        .card-container {
+          margin-bottom: 16px;
+        }
+
+        .jp-card {
+          @include mobile {
+            min-width: 190px;
+          }
+        }
+      }
+    }
+  }
+}
